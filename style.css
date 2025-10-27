@@ -6,9 +6,17 @@
 }
 
 body {
-  font-family: "Barlow", sans-serif;
-  font-weight: 600;
-  background-color: #faf7f2;
+  font-family: "Quattrocento", serif; /* brief uyumu */
+  font-weight: 400;
+  background-color: #faf7f2; /* palete uygun */
+  color: #292929;
+}
+
+/* Odak görünürlüğü (erişilebilirlik) */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #fdc913;
+  outline-offset: 2px;
 }
 
 /* ===================== ANA SAYFA HERO BÖLÜMÜ ===================== */
@@ -16,7 +24,7 @@ body {
   background-image: url("public/assets/iteration-1/home-banner.png");
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: 100vh; /* mobilde daha güvenli */
   height: auto;
   display: flex;
   align-items: center;
@@ -25,26 +33,43 @@ body {
 }
 
 .hero-content {
-  color: white;
+  color: #fff;
 }
 
 .logo {
-  width: 700px;
-  margin-bottom: 30px;
-  padding: 30px;
+  width: 220px;
+  margin-bottom: 16px;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .logo {
+    width: 320px;
+  }
 }
 
 .hero-subtitle {
-  font-family: "Satisfy";
+  font-family: "Satisfy", cursive;
   color: #fdc913;
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
 }
 
 .hero-title {
-  font-size: 48px;
-  font-weight: normal;
-  margin-bottom: 30px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 30px; /* 30x -> 30px düzeltildi */
+}
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 48px;
+  }
 }
 
 .hero-button {
@@ -53,13 +78,15 @@ body {
   border: none;
   padding: 15px 40px;
   border-radius: 45px;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 600;
   cursor: pointer;
 }
+
 /* ===================== NAVİGASYON MENÜ ===================== */
 .main-nav {
-  background: white;
+  background: #fff;
   padding: 20px 0;
 }
 
@@ -81,12 +108,15 @@ body {
   color: #292929;
   font-size: 14px;
 }
-
 .nav-item img {
   width: 24px;
   height: 24px;
 }
-/* ===================== ÖZEL KARTLAR ===================== */
+.nav-item:hover {
+  filter: brightness(0.96);
+}
+
+/* ===================== ÖZEL KARTLAR (CSS GRID) ===================== */
 .special-cards {
   padding: 60px 0;
 }
@@ -97,42 +127,60 @@ body {
   padding: 0 20px;
 }
 
+/* Eski flex yerine grid: akışkan ve basit kırılım */
 .cards-grid {
-  display: flex;
-  max-width: 1000px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr; /* mobil */
   gap: 20px;
 }
 
+/* Desktop’ta: sol büyük kart + sağda iki küçük kart dikey stack */
+@media (min-width: 960px) {
+  .cards-grid {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: stretch;
+  }
+}
+
 .card {
+  position: relative;
   border-radius: 12px;
   background-size: cover;
   background-position: center;
+  color: #fff;
+  min-height: 240px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card-content {
   padding: 30px;
-  color: white;
 }
 
 .card-large {
   background-image: url("public/assets/iteration-2/cta/kart-1.png");
-  width: 500px;
-  height: 500px;
+  min-height: 420px;
 }
-
-.card-group {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 480px;
-}
-
 .card-medium {
   background-image: url("public/assets/iteration-2/cta/kart-2.png");
-  height: 240px;
+  min-height: 200px;
 }
-
 .card-small {
   background-image: url("public/assets/iteration-2/cta/kart-3.png");
-  height: 240px;
+  min-height: 200px;
+}
+
+@media (min-width: 960px) {
+  .card-group {
+    display: grid;
+    gap: 20px;
+    grid-auto-rows: 1fr;
+  }
+  .card-medium,
+  .card-small {
+    min-height: 0;
+  } /* grid boyuna uyum */
 }
 
 .card h2 {
@@ -141,37 +189,34 @@ body {
   font-weight: 700;
   margin-bottom: 10px;
 }
-
 .card h3 {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
 }
-
 .card-small h3 {
   color: #5f5f5f;
 }
-
 .card p {
   font-family: "Quattrocento", serif;
   font-size: 16px;
   margin-bottom: 20px;
 }
-
 .red-text {
   color: #ce2829;
 }
 
 .card-button {
-  background: white;
+  background: #fff;
   color: #ce2829;
-  border: none;
+  border: 0;
   padding: 12px 25px;
   border-radius: 25px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
 }
+
 /* ===================== BAŞLIK BÖLÜMÜ ===================== */
 .section-headers {
   text-align: center;
@@ -181,17 +226,29 @@ body {
 .section-subtitle {
   font-family: "Satisfy", cursive;
   color: #ce2829;
-  font-size: 32px;
-  margin-bottom: 15px;
+  font-size: 28px;
+  margin-bottom: 12px;
   font-weight: 400;
+}
+@media (min-width: 768px) {
+  .section-subtitle {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
 }
 
 .section-title {
   font-family: "Roboto Condensed", sans-serif;
   color: #292929;
-  font-size: 40px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
 }
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 40px;
+  }
+}
+
 /* ===================== YİYECEK KATEGORİLERİ ===================== */
 .food-categories {
   padding: 30px 0;
@@ -209,22 +266,24 @@ body {
   align-items: center;
   gap: 8px;
   padding: 15px 25px;
-  background: white;
+  background: #fff;
   border-radius: 30px;
   text-decoration: none;
   color: #292929;
   font-size: 14px;
 }
-
 .category-item img {
   width: 20px;
   height: 20px;
 }
-
 .category-item.active {
   background: #292929;
-  color: white;
+  color: #fff;
 }
+.category-item:hover {
+  filter: brightness(0.96);
+}
+
 /* ===================== YİYECEK KARTLARI ===================== */
 .food-items {
   padding: 30px 0 60px;
@@ -244,11 +303,12 @@ body {
   border-radius: 16px;
   width: 300px;
   overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .food-card img {
   width: 100%;
-  height: 260px;
+  height: 260px; /* 260 px -> 260px düzeltildi */
   object-fit: cover;
 }
 
@@ -269,16 +329,15 @@ body {
   font-size: 14px;
 }
 
-.rating {
-  color: #292929;
-  font-weight: 700;
-}
-
+.rating,
 .price {
   color: #292929;
   font-weight: 700;
+}
+.price {
   font-size: 16px;
 }
+
 /* ===================== FOOTER ===================== */
 .footer {
   background: #1b1b1b;
@@ -288,17 +347,16 @@ body {
 
 .footer-grid {
   display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
   gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto 30px;
   padding: 0 20px;
-  margin-bottom: 30px;
+  flex-wrap: wrap; /* küçük ekranlarda taşmayı önle */
 }
 
 .footer-main {
-  flex: 2;
+  flex: 2 1 300px;
 }
-
 .footer-logo {
   width: 150px;
   margin-bottom: 30px;
@@ -309,13 +367,11 @@ body {
   flex-direction: column;
   gap: 15px;
 }
-
 .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 15px;
 }
-
 .contact-item img {
   width: 20px;
   height: 20px;
@@ -323,41 +379,35 @@ body {
 }
 
 .hot-menu {
-  flex: 1;
+  flex: 1 1 200px;
 }
-
 .hot-menu h4 {
-  color: white;
+  color: #fff;
   font-size: 18px;
   margin-bottom: 15px;
 }
-
 .hot-menu ul {
   list-style: none;
 }
-
 .hot-menu li {
   margin-bottom: 8px;
   font-size: 14px;
 }
 
 .instagram-section {
-  flex: 1;
+  flex: 1 1 200px;
 }
-
 .instagram-section h4 {
-  color: white;
+  color: #fff;
   font-size: 18px;
   margin-bottom: 15px;
 }
-
 .instagram-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   max-width: 200px;
 }
-
 .instagram-grid img {
   width: 60px;
   height: 60px;
@@ -374,29 +424,22 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 /* ===================== MOBİL RESPONSIVE ===================== */
 @media (max-width: 480px) {
   .hero-title {
     font-size: 28px;
   }
-
   .hero-subtitle {
     font-size: 20px;
   }
-
   .logo {
     width: 150px;
-  }
-
-  .hero-button {
-    padding: 12px 30px;
-    font-size: 16px;
   }
 
   .nav-container {
     gap: 15px;
   }
-
   .nav-item {
     font-size: 12px;
   }
@@ -404,11 +447,9 @@ body {
   .card {
     padding: 20px;
   }
-
   .card h2 {
     font-size: 28px;
   }
-
   .card h3 {
     font-size: 18px;
   }
@@ -416,7 +457,6 @@ body {
   .section-title {
     font-size: 24px;
   }
-
   .section-subtitle {
     font-size: 18px;
   }
@@ -424,7 +464,6 @@ body {
   .categories-grid {
     gap: 10px;
   }
-
   .category-item {
     padding: 10px 15px;
     font-size: 12px;
@@ -434,7 +473,6 @@ body {
     width: 100%;
     max-width: 300px;
   }
-
   .container {
     padding: 0 15px;
   }

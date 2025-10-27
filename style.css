@@ -373,3 +373,68 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+/* ===================== MOBİL RESPONSIVE ===================== */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+
+  .nav-container {
+    gap: 15px;
+  }
+
+  .nav-item {
+    font-size: 12px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 28px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 18px;
+  }
+
+  .categories-grid {
+    gap: 10px;
+  }
+
+  .category-item {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  .food-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}

@@ -85,3 +85,89 @@ body {
   width: 24px;
   height: 24px;
 }
+/* ===================== ÖZEL KARTLAR ===================== */
+.special-cards {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cards-grid {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.card {
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+  color: white;
+}
+
+.card-large {
+  background-image: url("public/assets/iteration-2/cta/kart-1.png");
+  width: 500px;
+  height: 500px;
+}
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 480px;
+}
+
+.card-medium {
+  background-image: url("public/assets/iteration-2/cta/kart-2.png");
+  height: 240px;
+}
+
+.card-small {
+  background-image: url("public/assets/iteration-2/cta/kart-3.png");
+  height: 240px;
+}
+
+.card h2 {
+  font-family: "Quattrocento", serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.card-small h3 {
+  color: #5f5f5f;
+}
+
+.card p {
+  font-family: "Quattrocento", serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.red-text {
+  color: #ce2829;
+}
+
+.card-button {
+  background: white;
+  color: #ce2829;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}

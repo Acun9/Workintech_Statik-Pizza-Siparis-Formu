@@ -171,3 +171,23 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
+/* ===================== BAŞLIK BÖLÜMÜ ===================== */
+.section-headers {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.section-subtitle {
+  font-family: "Satisfy", cursive;
+  color: #ce2829;
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.section-title {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #292929;
+  font-size: 40px;
+  font-weight: 600;
+}
